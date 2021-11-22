@@ -1,5 +1,6 @@
 #world {
-  border: solid black 2px
+  border: solid black 2px;
+  margin: 20px;
 }
 
 .cell {
