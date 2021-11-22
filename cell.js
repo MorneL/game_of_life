@@ -6,11 +6,7 @@ class Cell {
     this.alive = alive;
     this.gui_cell = gui_cell;
     this.setColor();
-
-    var this_cell = this;
-    gui_cell.addEventListener('click', function(){
-      this_cell.toggle();
-    })
+    this.addClickListener();
   }
 
 
@@ -59,5 +55,12 @@ class Cell {
 
   alive_neighbours(){
     return this.neighbours().filter(neighbour => neighbour.alive)
+  }
+
+  addClickListener(){
+    var this_cell = this;
+    this.gui_cell.addEventListener('click', function(){
+      this_cell.toggle();
+    })
   }
 }
