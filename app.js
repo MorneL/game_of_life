@@ -2,8 +2,9 @@ $(document).ready(function(){
   var gui_size = 300;
   var cell_count = 15;
   var simulation_delay = 100;
-  var world_element = document.getElementById("world");
-  var world = new World(world_element, gui_size, cell_count, simulation_delay);
+  var world_element = document.getElementById('world');
+  var generation_num_label = document.getElementById('generation_num')
+  var world = new World(world_element, generation_num_label, gui_size, cell_count, simulation_delay);
   world.setup_world();
 
   document.getElementById('run_button').addEventListener('click', function(){
@@ -17,6 +18,14 @@ $(document).ready(function(){
   document.getElementById('clear_button').addEventListener('click', function(){
     world.update_world(gui_size, cell_count);
     world.stop_simulation();
+  })
+
+  document.getElementById('toggle_borders_button').addEventListener('click', function(){
+    if(world_element.className.includes('no-borders')){
+      world_element.className = '';
+    } else {
+      world_element.className = 'no-borders';
+    }
   })
 
   document.getElementById("gui_size_slider").oninput = function() {

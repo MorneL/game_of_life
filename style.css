@@ -6,3 +6,19 @@
 .cell {
   float: left;
 }
+
+.cell.dead-cell {
+  border-right: solid black 1px;
+  border-bottom: solid black 1px;
+  background: white;
+}
+
+.cell.alive-cell {
+  border-right: solid white 1px;
+  border-bottom: solid white 1px;
+  background: black;
+}
+
+#world.no-borders .cell{
+  border-color: white;
+}

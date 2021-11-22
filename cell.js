@@ -21,11 +21,9 @@ class Cell {
 
   setColor(){
     if (this.alive) {
-      this.gui_cell.style.border = "solid white 1px";
-      this.gui_cell.style.background = "black";
+      this.gui_cell.className = "cell alive-cell"
     } else {
-      this.gui_cell.style.border = "solid black 1px";
-      this.gui_cell.style.background = "white";
+      this.gui_cell.className = "cell dead-cell"
     }
   }
 
